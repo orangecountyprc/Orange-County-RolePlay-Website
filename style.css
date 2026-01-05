@@ -467,6 +467,50 @@ section {
   text-align: center;
   margin-top: auto;
 }
+.departments-showcase {
+  padding: 0;
+}
+
+.dept-full {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.dept-full.reverse {
+  direction: rtl;
+}
+
+.dept-full.reverse > * {
+  direction: ltr;
+}
+
+.dept-full-text h2 {
+  font-size: 42px;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.dept-full-text p {
+  font-size: 18px;
+  color: #c8c8d8;
+  margin-bottom: 20px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.dept-full-image img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #1f1f2b;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+
 
 
 
