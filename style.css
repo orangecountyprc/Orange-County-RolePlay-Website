@@ -401,5 +401,15 @@ section {
   border: 1px solid #1f1f2b;
   background: #0a0a0d;
 }
+/* PAGE TRANSITION */
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 
 
