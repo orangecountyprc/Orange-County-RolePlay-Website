@@ -361,5 +361,45 @@ section {
 .discord-icon:hover {
   opacity: 1;
 }
+/* ABOUT SPLIT SECTIONS */
+.about-split {
+  padding: 80px 0;
+  background: #050507;
+}
+
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.split-grid.reverse {
+  direction: rtl;
+}
+
+.split-grid.reverse > * {
+  direction: ltr;
+}
+
+.split-text h2 {
+  font-size: 28px;
+  color: #ffffff;
+}
+
+.split-body {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #c8c8d8;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.split-image img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #1f1f2b;
+  background: #0a0a0d;
+}
 
 
