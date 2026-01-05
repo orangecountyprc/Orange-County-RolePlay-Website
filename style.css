@@ -541,6 +541,37 @@ section {
   object-fit: cover;
   max-height: 500px;
 }
+.split-grid {
+  position: relative;
+}
+
+.split-image img {
+  transition: transform 0.35s ease;
+}
+
+.split-grid:hover .split-image img {
+  transform: scale(1.05);
+}
+
+.split-text {
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  opacity: 0.95;
+}
+
+.split-grid:hover .split-text {
+  transform: translateY(-4px);
+  opacity: 1;
+}
+
+.split-text a.btn-primary {
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.split-grid:hover .btn-primary {
+  transform: translateY(-2px);
+  background: #ff962e;
+}
+
 
 
 
