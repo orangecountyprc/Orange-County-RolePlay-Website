@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="/Orange-County-RolePlay-Website/images/ocrp.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS SCROLL ANIMATION LIBRARY -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
 <body>
@@ -25,76 +28,76 @@
     </ul>
   </nav>
 
-  <!-- DEPARTMENTS (ALTERNATING SECTIONS) -->
+  <!-- DEPARTMENTS (ALTERNATING SECTIONS WITH AOS) -->
   <section class="about-split">
     <div class="container">
 
       <!-- FHP -->
       <div class="split-grid">
-        <div class="split-text">
+        <div class="split-text" data-aos="fade-right">
           <h2>Florida Highway Patrol (FHP)</h2>
           <p class="split-body">
             Enforce traffic laws, conduct traffic stops, and patrol Florida’s highways with professionalism and precision.
           </p>
           <a href="https://discord.gg/PpQAqN7pdd" target="_blank" class="btn-primary">Join FHP</a>
         </div>
-        <div class="split-image">
+        <div class="split-image" data-aos="fade-left">
           <img src="/Orange-County-RolePlay-Website/images/fhp.png" alt="FHP Vehicle">
         </div>
       </div>
 
       <!-- OPD -->
       <div class="split-grid reverse">
-        <div class="split-text">
+        <div class="split-text" data-aos="fade-left">
           <h2>Orlando Police Department (OPD)</h2>
           <p class="split-body">
             Protect and serve the City of Orlando with urban patrols, investigations, and rapid response operations.
           </p>
           <a href="https://discord.gg/mhSGmn8rSx" target="_blank" class="btn-primary">Join OPD</a>
         </div>
-        <div class="split-image">
+        <div class="split-image" data-aos="fade-right">
           <img src="/Orange-County-RolePlay-Website/images/opd.png" alt="OPD Vehicle">
         </div>
       </div>
 
       <!-- OCSO -->
       <div class="split-grid">
-        <div class="split-text">
+        <div class="split-text" data-aos="fade-right">
           <h2>Orange County Sheriff's Office (OCSO)</h2>
           <p class="split-body">
             Serve the residents of Orange County through community policing, countywide patrols, and specialized units.
           </p>
           <a href="https://discord.gg/pjjUh2Hsh8" target="_blank" class="btn-primary">Join OCSO</a>
         </div>
-        <div class="split-image">
+        <div class="split-image" data-aos="fade-left">
           <img src="/Orange-County-RolePlay-Website/images/ocso.png" alt="OCSO Vehicle">
         </div>
       </div>
 
       <!-- OCFR -->
       <div class="split-grid reverse">
-        <div class="split-text">
+        <div class="split-text" data-aos="fade-left">
           <h2>Orange County Fire Rescue (OCFR)</h2>
           <p class="split-body">
             Respond to fires, medical emergencies, and rescue operations with elite training and real‑world accuracy.
           </p>
           <a href="https://discord.gg/76HYBhV2fc" target="_blank" class="btn-primary">Join OCFR</a>
         </div>
-        <div class="split-image">
+        <div class="split-image" data-aos="fade-right">
           <img src="/Orange-County-RolePlay-Website/images/ocfr.png" alt="OCFR Vehicle">
         </div>
       </div>
 
       <!-- FDOT -->
       <div class="split-grid">
-        <div class="split-text">
+        <div class="split-text" data-aos="fade-right">
           <h2>Florida Department of Transportation (FDOT)</h2>
           <p class="split-body">
             Keep Florida’s roads safe with traffic management, incident response, and roadway hazard mitigation.
           </p>
           <a href="https://discord.gg/6vYQTd3sFR" target="_blank" class="btn-primary">Join FDOT</a>
         </div>
-        <div class="split-image">
+        <div class="split-image" data-aos="fade-left">
           <img src="/Orange-County-RolePlay-Website/images/fdot.png" alt="FDOT Vehicle">
         </div>
       </div>
@@ -127,6 +130,15 @@
           window.location.href = url;
         }, 200);
       });
+    });
+  </script>
+
+  <!-- AOS INIT -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true
     });
   </script>
 
