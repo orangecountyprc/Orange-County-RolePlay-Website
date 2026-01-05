@@ -193,7 +193,7 @@ section {
 .feature-grid {
   margin-top: 24px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* FORCE 3 COLUMNS */
   gap: 14px;
 }
 
@@ -518,3 +518,4 @@ section {
   object-fit: cover;
   max-height: 500px;
 }
+
