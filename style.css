@@ -227,6 +227,15 @@ section {
   margin-bottom: 6px;
   color: #ffb04d;
 }
+.feature-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: #ff7a00;
+  box-shadow: 0 8px 20px rgba(255, 122, 0, 0.15);
+}
 
 .feature-summary {
   font-size: 13px;
@@ -532,6 +541,7 @@ section {
   object-fit: cover;
   max-height: 500px;
 }
+
 
 
 
