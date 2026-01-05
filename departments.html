@@ -4,54 +4,86 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OCRP | Departments</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="/Orange-County-RolePlay-Website/images/ocrp.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-logo">OCRP</div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="/Orange-County-RolePlay-Website/index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="departments.html" class="active">Departments</a></li>
+      <li><a href="departments.html">Departments</a></li>
       <li><a href="applications.html">Applications</a></li>
       <li><a href="roblox://placeId=2534724415&launchData=%7B%22psCode%22%3A%22OrangeFL%22%7D" target="_blank">Join Game</a></li>
       <li><a href="https://discord.gg/6qHNKswAQY" target="_blank">Join Discord</a></li>
     </ul>
   </nav>
 
-  <section class="mid-section">
-    <div class="container mid-grid">
+  <!-- DEPARTMENTS GRID -->
+  <section class="departments">
+    <div class="container">
+      <h2>Our Departments</h2>
+      <p class="section-subtitle">Choose Your Path</p>
 
-      <div class="mid-left">
-        <h2>Departments</h2>
-        <p class="section-subtitle">Choose your path</p>
+      <div class="dept-grid">
 
-        <div class="dept-selector">
-          <button class="pill active" data-dept="fhp">FHP</button>
-          <button class="pill" data-dept="opd">OPD</button>
-          <button class="pill" data-dept="ocso">OCSO</button>
-          <button class="pill" data-dept="ocfr">OCFR</button>
-          <button class="pill" data-dept="fdot">FDOT</button>
+        <!-- FHP -->
+        <div class="dept-card">
+          <img src="images/fhp.png" alt="FHP Vehicle" class="dept-img">
+          <h3>Florida Highway Patrol (FHP)</h3>
+          <p class="dept-text">
+            Enforce traffic laws, conduct traffic stops, and patrol Florida’s highways with professionalism and precision.
+          </p>
+          <a href="https://discord.gg/6qHNKswAQY" target="_blank" class="btn-primary dept-btn">Join FHP</a>
         </div>
 
-        <div class="dept-info">
-          <h3 id="deptTitle">Florida Highway Patrol</h3>
-          <p id="deptDesc">Enforcing traffic laws, responding to crashes, and ensuring highway safety across the state of Florida.</p>
-
-          <div class="dept-stats" id="deptStats">
-            <span>Statewide Jurisdiction</span>
-            <span>5 Specialized Units</span>
-            <span>Daily Patrols</span>
-          </div>
-
-          <a id="deptApplyBtn" href="https://discord.gg/PpQAqN7pdd" target="_blank" class="btn-primary">Join Now</a>
+        <!-- OPD -->
+        <div class="dept-card">
+          <img src="images/opd.png" alt="OPD Vehicle" class="dept-img">
+          <h3>Orlando Police Department (OPD)</h3>
+          <p class="dept-text">
+            Protect and serve the City of Orlando with urban patrols, investigations, and rapid response operations.
+          </p>
+          <a href="https://discord.gg/6qHNKswAQY" target="_blank" class="btn-primary dept-btn">Join OPD</a>
         </div>
+
+        <!-- OCSO -->
+        <div class="dept-card">
+          <img src="images/ocso.png" alt="OCSO Vehicle" class="dept-img">
+          <h3>Orange County Sheriff's Office (OCSO)</h3>
+          <p class="dept-text">
+            Serve the residents of Orange County through community policing, countywide patrols, and specialized units.
+          </p>
+          <a href="https://discord.gg/6qHNKswAQY" target="_blank" class="btn-primary dept-btn">Join OCSO</a>
+        </div>
+
+        <!-- OCFR -->
+        <div class="dept-card">
+          <img src="images/ocfr.png" alt="OCFR Vehicle" class="dept-img">
+          <h3>Orange County Fire Rescue (OCFR)</h3>
+          <p class="dept-text">
+            Respond to fires, medical emergencies, and rescue operations with elite training and real‑world accuracy.
+          </p>
+          <a href="https://discord.gg/6qHNKswAQY" target="_blank" class="btn-primary dept-btn">Join OCFR</a>
+        </div>
+
+        <!-- FDOT -->
+        <div class="dept-card">
+          <img src="images/fdot.png" alt="FDOT Vehicle" class="dept-img">
+          <h3>Florida Department of Transportation (FDOT)</h3>
+          <p class="dept-text">
+            Keep Florida’s roads safe with traffic management, incident response, and roadway hazard mitigation.
+          </p>
+          <a href="https://discord.gg/6qHNKswAQY" target="_blank" class="btn-primary dept-btn">Join FDOT</a>
+        </div>
+
       </div>
-
     </div>
   </section>
 
@@ -64,30 +96,24 @@
       </a>
     </div>
   </footer>
-<script>
-  document.body.classList.add('fade-in');
 
-  document.querySelectorAll('a').forEach(link => {
-    const url = link.getAttribute('href');
-    if (!url || url.startsWith('#') || link.target === "_blank") return;
+  <!-- PAGE TRANSITION SCRIPT -->
+  <script>
+    document.body.classList.add('fade-in');
 
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      document.body.style.opacity = 0;
-      setTimeout(() => {
-        window.location.href = url;
-      }, 200);
+    document.querySelectorAll('a').forEach(link => {
+      const url = link.getAttribute('href');
+      if (!url || url.startsWith('#') || link.target === "_blank") return;
+
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = url;
+        }, 200);
+      });
     });
-  });
-</script>
+  </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
