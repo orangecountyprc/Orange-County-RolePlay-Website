@@ -125,7 +125,7 @@ ul {
   color: #b0b0c4;
 }
 
-/* BUTTONS */
+/* BUTTONS (with glow, neon outline, press-down) */
 .btn-primary,
 .btn-secondary {
   padding: 10px 20px;
@@ -135,6 +135,11 @@ ul {
   display: inline-block;
   border: none;
   cursor: pointer;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              background 0.25s ease,
+              border-color 0.25s ease,
+              outline 0.25s ease;
 }
 
 .btn-primary {
@@ -144,6 +149,9 @@ ul {
 
 .btn-primary:hover {
   background: #ff962e;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 14px rgba(255, 122, 0, 0.45);
+  outline: 2px solid #ff7a00;
 }
 
 .btn-secondary {
@@ -154,6 +162,16 @@ ul {
 
 .btn-secondary:hover {
   border-color: #ff7a00;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 14px rgba(255, 122, 0, 0.45);
+  outline: 2px solid #ff7a00;
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: scale(0.96);
+  box-shadow: 0 0 6px rgba(255, 122, 0, 0.3);
+  outline: none;
 }
 
 /* SECTIONS BASE */
