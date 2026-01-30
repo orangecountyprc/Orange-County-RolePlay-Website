@@ -43,11 +43,18 @@
       <p class="hero-sub">
         Experience an immersive Florida-based roleplay community. Join our growing community in realistic emergency response scenarios.
       </p>
+
       <div class="hero-buttons">
         <a href="https://discord.gg/6qHNKswAQY" target="_blank" class="btn-primary">Join Discord</a>
         <a href="https://www.roblox.com/share/g/1030805704" target="_blank" class="btn-secondary">Join Group</a>
       </div>
-      <p class="hero-small">20+ Members</p>
+
+      <!-- LIVE MEMBER COUNTS -->
+      <div style="margin-top: 20px; display: flex; gap: 20px; justify-content: center; font-size: 1rem; color: #c9c9c9;">
+        <p id="discordCount">Discord: Loading...</p>
+        <p id="robloxCount">Roblox: Loading...</p>
+      </div>
+
     </div>
   </section>
 
@@ -140,6 +147,34 @@
         }, 200);
       });
     });
+  </script>
+
+  <!-- LIVE DISCORD COUNT -->
+  <script>
+    async function updateDiscordCount() {
+      try {
+        const res = await fetch("https://discord.com/api/guilds/1401969487116369970/widget.json");
+        const data = await res.json();
+        document.getElementById("discordCount").innerText = "Discord: " + data.members.length + "+ Members";
+      } catch (e) {
+        document.getElementById("discordCount").innerText = "Discord: Unavailable";
+      }
+    }
+    updateDiscordCount();
+  </script>
+
+  <!-- LIVE ROBLOX COUNT -->
+  <script>
+    async function updateRobloxCount() {
+      try {
+        const res = await fetch("https://groups.roblox.com/v1/groups/1030805704");
+        const data = await res.json();
+        document.getElementById("robloxCount").innerText = "Roblox: " + data.memberCount + "+ Members";
+      } catch (e) {
+        document.getElementById("robloxCount").innerText = "Roblox: Unavailable";
+      }
+    }
+    updateRobloxCount();
   </script>
 
 </body>
