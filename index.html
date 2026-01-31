@@ -31,7 +31,7 @@
       <li><a href="departments.html">Departments</a></li>
       <li><a href="applications.html">Applications</a></li>
       <li><a href="roblox://placeId=2534724415&launchData=%7B%22psCode%22%3A%22OrangeFL%22%7D" target="_blank">Join Game</a></li>
-      <li><a href="https://discord.gg/6qHNKswAQY" target="_blank">Join Discord</a></li>
+      <li><a href="https://discord.gg/ocfl" target="_blank">Join Discord</a></li>
     </ul>
   </nav>
 
@@ -49,10 +49,17 @@
         <a href="https://www.roblox.com/share/g/1030805704" target="_blank" class="btn-secondary">Join Group</a>
       </div>
 
-      <!-- LIVE MEMBER COUNTS -->
-      <div style="margin-top: 20px; display: flex; gap: 20px; justify-content: center; font-size: 1rem; color: #c9c9c9;">
-        <p id="discordCount">Discord: Loading...</p>
-        <p id="robloxCount">Roblox: Loading...</p>
+      <!-- FORMATTED LIVE STATS BAR -->
+      <div class="stats-bar" data-aos="fade-up">
+        <div class="stat-box">
+          <span class="stat-label">Discord Members</span>
+          <span class="stat-value" id="discordCount">Loading...</span>
+        </div>
+
+        <div class="stat-box">
+          <span class="stat-label">Roblox Members</span>
+          <span class="stat-value" id="robloxCount">Loading...</span>
+        </div>
       </div>
 
     </div>
@@ -149,32 +156,26 @@
     });
   </script>
 
-  <!-- LIVE DISCORD COUNT -->
+  <!-- LIVE STATS FROM OCRP-API -->
   <script>
-    async function updateDiscordCount() {
+    async function loadStats() {
       try {
-        const res = await fetch("https://discord.com/api/guilds/1401969487116369970/widget.json");
+        const res = await fetch("http://localhost:3000/stats");
         const data = await res.json();
-        document.getElementById("discordCount").innerText = "Discord: " + data.members.length + "+ Members";
-      } catch (e) {
-        document.getElementById("discordCount").innerText = "Discord: Unavailable";
-      }
-    }
-    updateDiscordCount();
-  </script>
 
-  <!-- LIVE ROBLOX COUNT -->
-  <script>
-    async function updateRobloxCount() {
-      try {
-        const res = await fetch("https://groups.roblox.com/v1/groups/1030805704");
-        const data = await res.json();
-        document.getElementById("robloxCount").innerText = "Roblox: " + data.memberCount + "+ Members";
-      } catch (e) {
-        document.getElementById("robloxCount").innerText = "Roblox: Unavailable";
+        document.getElementById("discordCount").innerText =
+          data.discord ? data.discord.toLocaleString() : "Unavailable";
+
+        document.getElementById("robloxCount").innerText =
+          data.roblox ? data.roblox.toLocaleString() : "Unavailable";
+
+      } catch (err) {
+        document.getElementById("discordCount").innerText = "Unavailable";
+        document.getElementById("robloxCount").innerText = "Unavailable";
       }
     }
-    updateRobloxCount();
+
+    loadStats();
   </script>
 
 </body>
