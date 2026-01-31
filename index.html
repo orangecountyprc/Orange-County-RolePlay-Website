@@ -49,16 +49,11 @@
         <a href="https://www.roblox.com/share/g/1030805704" target="_blank" class="btn-secondary">Join Group</a>
       </div>
 
-      <!-- FORMATTED LIVE STATS BAR -->
+      <!-- STATIC STATS BAR -->
       <div class="stats-bar" data-aos="fade-up">
         <div class="stat-box">
           <span class="stat-label">Discord Members</span>
-          <span class="stat-value" id="discordCount">Loading...</span>
-        </div>
-
-        <div class="stat-box">
-          <span class="stat-label">Roblox Members</span>
-          <span class="stat-value" id="robloxCount">Loading...</span>
+          <span class="stat-value">2000+</span>
         </div>
       </div>
 
@@ -154,28 +149,6 @@
         }, 200);
       });
     });
-  </script>
-
-  <!-- LIVE STATS FROM OCRP-API -->
-  <script>
-    async function loadStats() {
-      try {
-        const res = await fetch("http://localhost:3000/stats");
-        const data = await res.json();
-
-        document.getElementById("discordCount").innerText =
-          data.discord ? data.discord.toLocaleString() : "Unavailable";
-
-        document.getElementById("robloxCount").innerText =
-          data.roblox ? data.roblox.toLocaleString() : "Unavailable";
-
-      } catch (err) {
-        document.getElementById("discordCount").innerText = "Unavailable";
-        document.getElementById("robloxCount").innerText = "Unavailable";
-      }
-    }
-
-    loadStats();
   </script>
 
 </body>
